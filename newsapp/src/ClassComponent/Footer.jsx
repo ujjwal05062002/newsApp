@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 export default class Footer extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
+      <>
+       <footer className='bg-secondary text-center text-light p-2 mt-1'>
+        <p>copyright@ujjwalUpadhyay</p>
+        </footer> 
+      </>
     );
   }
 }

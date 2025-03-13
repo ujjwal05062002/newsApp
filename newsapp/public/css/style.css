@@ -1,0 +1,21 @@
+.card-title{
+    font-size: 15px;
+    height: 65px;
+    text-align: justify;
+}
+
+.source p{
+    font-size: 13px;
+    margin-bottom: -10px;
+}
+
+.card-text{
+    font-size: 14px;
+    text-align: justify;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.card-text::-webkit-scrollbar{
+    display: none;
+}
