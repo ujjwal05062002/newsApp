@@ -54,7 +54,7 @@ export default class Home extends Component {
             <>
                 <div className="container-fluid my-3">
                     <h4 className='bg-secondary text-light p-2 text-center'>{this.props.q} News Items</h4>
-                    <InfiniteScroll
+                    <InfiniteScroll 
                         dataLength={this.state.articles.length}
                         next={this.fetchData}
                         hasMore={this.state.articles.length < this.state.totalResults}

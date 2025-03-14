@@ -1,3 +1,7 @@
+*{
+    overflow-x: hidden !important;
+}
+
 .card-title{
     font-size: 15px;
     height: 65px;
@@ -24,6 +28,8 @@
 .card-text::-webkit-scrollbar{
     display: none;
 }
+
+
 
 
 
