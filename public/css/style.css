@@ -1,7 +1,3 @@
-.infinite{
-    overflow-x: hidden !important;
-}
-
 .card-title{
     font-size: 15px;
     height: 65px;
@@ -29,7 +25,6 @@
     display: none;
 }
 
-
-
-
-
+.infinite{
+    overflow-x: hidden !important;
+}
