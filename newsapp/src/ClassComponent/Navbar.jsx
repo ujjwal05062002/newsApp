@@ -44,8 +44,8 @@ export default class Navbar extends Component {
                     Language
                   </a>
                   <ul className="dropdown-menu">
-                    <li><button className="dropdown-item" >Hindi</button></li>
-                    <li><button className="dropdown-item" >English</button></li>
+                    <li><button className="dropdown-item" onClick={()=>this.props.changeLanguage("hi")} >Hindi</button></li>
+                    <li><button className="dropdown-item" onClick={()=>this.props.changeLanguage("en")} >English</button></li>
 
                   </ul>
                 </li>

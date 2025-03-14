@@ -2,6 +2,11 @@
     font-size: 15px;
     height: 65px;
     text-align: justify;
+    overflow-y: auto;
+}
+
+.card-title::-webkit-scrollbar{
+    display: none;
 }
 
 .source p{
@@ -19,3 +24,6 @@
 .card-text::-webkit-scrollbar{
     display: none;
 }
+
+
+
