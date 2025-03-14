@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
+  constructor(){
+    super()
+    this.state = {
+      search : ""
+    }
+  }
+
+  postSearch(e){
+    e.preventDefault()
+    this.props.changeSearch(this.state.search)
+    this.setState({search:""})
+  }
   render() {
     return (
       <>
@@ -51,8 +63,8 @@ export default class Navbar extends Component {
                 </li>
 
               </ul>
-              <form className=" d-flex" role="search">
-                <input className=" form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <form className=" d-flex" role="search" onSubmit={(e)=>this.postSearch(e)} >
+                <input className=" form-control me-2" type="search" name='search' value={this.state.search} onChange={(e)=> this.setState({search:e.target.value})} placeholder="Search" aria-label="Search" />
                 <button className=" btn btn-outline-light" type="submit">Search</button>
               </form>
             </div>

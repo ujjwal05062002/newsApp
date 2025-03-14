@@ -10,8 +10,8 @@ export default class Home extends Component {
         }
     }
 
-    async getAPIData() {
-        var response = await fetch(`https://newsapi.org/v2/everything?q=${this.props.q}&language=${this.props.language}&sortBy=publishedAt&apiKey=9a57fe8c40e64e4da0eddcbe81c2d6f3`)
+    async getAPIData(q) {
+        var response = await fetch(`https://newsapi.org/v2/everything?q=${q}&language=${this.props.language}&sortBy=publishedAt&apiKey=9a57fe8c40e64e4da0eddcbe81c2d6f3`)
         response = await response.json()
         this.setState({
             totalResults: response.totalResults,
@@ -22,12 +22,15 @@ export default class Home extends Component {
     
 
     componentDidMount() {
-        this.getAPIData()
+        this.getAPIData(this.props.q)
     }
 
     componentDidUpdate(oldProps) {
         if (this.props !== oldProps) {
-            this.getAPIData()
+            if (this.props.search && this.props.search !== oldProps.search)
+                this.getAPIData(this.props.search)
+            else
+                this.getAPIData(this.props.q)
         }
     }
     render() {
