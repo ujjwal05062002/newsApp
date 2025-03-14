@@ -17,10 +17,12 @@ export default class Home extends Component {
         this.setState({ page: 1, q: q })
         var response = await fetch(`https://newsapi.org/v2/everything?q=${q}&page=${this.state.page}&pageSize=12&language=${this.props.language}&sortBy=publishedAt&apiKey=9a57fe8c40e64e4da0eddcbe81c2d6f3`)
         response = await response.json()
-        this.setState({
-            totalResults: response.totalResults,
-            articles: response.articles.filter((x) => x.title !== "[Removed]")
-        })
+        if (response.articles){
+            this.setState({
+                totalResults: response.totalResults,
+                articles: response.articles.filter((x) => x.title !== "[Removed]")
+            })
+        }
     }
 
     fetchData = async () => {
