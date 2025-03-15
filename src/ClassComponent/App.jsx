@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HashRouter } from 'react-router-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -21,7 +22,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <BrowserRouter>
+        <HashRouter>
           <Navbar changeLanguage={this.changeLanguage} changeSearch = {this.changeSearch}/>
           <Routes>
             <Route path='/' element={<Home search={this.state.search} language={this.state.language} q="All" />} />
@@ -37,7 +38,7 @@ export default class App extends Component {
             <Route path='/Jokes' element={<Home search={this.state.search} language={this.state.language} q="Jokes" />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </HashRouter>
       </>
     );
   }
