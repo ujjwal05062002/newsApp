@@ -17,7 +17,7 @@ export default class Home extends Component {
         this.setState({ page: 1, q: q })
         var response = await fetch(`https://newsapi.org/v2/everything?q=${q}&page=${this.state.page}&pageSize=12&language=${this.props.language}&sortBy=publishedAt&apiKey=9a57fe8c40e64e4da0eddcbe81c2d6f3`)
         response = await response.json()
-        if (response.articles){
+        if (response.articles) {
             this.setState({
                 totalResults: response.totalResults,
                 articles: response.articles.filter((x) => x.title !== "[Removed]")
@@ -58,7 +58,13 @@ export default class Home extends Component {
                         dataLength={this.state.articles.length}
                         next={this.fetchData}
                         hasMore={this.state.articles.length < this.state.totalResults}
-                        loader={<h4>Loading...</h4>}
+                        loader={
+                            <div className='text-center py-5'>
+                            <div class="spinner-border" role="status">
+                                
+                            </div>
+                            </div>
+                        }
                         endMessage={
                             <p style={{ textAlign: 'center' }}>
                                 <b>No More News Articles</b>
